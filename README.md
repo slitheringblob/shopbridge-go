@@ -1,5 +1,6 @@
 # shopbridge-go
-Shopbridge API problem solution in Go
+Shopbridge API problem solution in Go. Just a simple product inventory API made with Gin, GORM, Postgresql and ofc GO.
+
 
 ## Endpoints:
 
