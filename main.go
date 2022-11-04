@@ -1,14 +1,16 @@
 package main
 
 import (
+	"log"
 	"shopbridge-go/models"
-
-	"github.com/gin-gonic/gin"
+	"shopbridge-go/routes"
 )
 
 func main() {
-	router := gin.Default()
+
 	db := models.SetUpDB()
 	db.AutoMigrate(&models.Item{})
-	router.Run(":8080")
+
+	router := routes.SetUpRoutes(db)
+	log.Fatal(router.Run(":8080"))
 }

@@ -4,7 +4,7 @@ import (
 	"shopbridge-go/controllers"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 func SetUpRoutes(db *gorm.DB) *gin.Engine {
@@ -13,11 +13,11 @@ func SetUpRoutes(db *gorm.DB) *gin.Engine {
 	router.Use(func(ctx *gin.Context) {
 		ctx.Set("db", db)
 	})
-	router.GET("/items", controllers.GetAllItems)
-	router.POST("/items", controllers.CreateSingleItem)
-	router.GET("/items/:id", controllers.GetSingleItem)
-	router.PATCH("/items:id", controllers.UpdateSingleItem)
-	router.DELETE("/items/:id", controllers.DeleteSingleItem)
+	router.GET("/item", controllers.GetAllItems)       //done
+	router.POST("/item", controllers.CreateSingleItem) //done
+	router.GET("/item/:id", controllers.GetSingleItem) //done
+	router.PATCH("/item/:id", controllers.UpdateSingleItem)
+	router.DELETE("/item/:id", controllers.DeleteSingleItem)
 
 	return router
 }
